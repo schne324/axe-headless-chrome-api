@@ -9,7 +9,7 @@ const router = new Router();
 
 require('koa-qs')(app);
 
-router.get('/', async (ctx) => {
+router.get('/', async ctx => {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   await page.goto(ctx.query.url || 'https://google.com');
